@@ -1,0 +1,36 @@
+name: fetch-image
+# 외부 이미지(AI 생성 결과, 무료 사진 등)를 받아 저장소 assets/ 에 저장합니다.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 이미지 URL
+        required: true
+      path:
+        description: 저장 경로 (예 assets/2026-10-26/expo-cover.png)
+        required: true
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        env:
+          URL: ${{ inputs.url }}
+          DEST: ${{ inputs.path }}
+        run: |
+          case "$DEST" in assets/*) ;; *) echo "path must start with assets/"; exit 1;; esac
+          mkdir -p "$(dirname "$DEST")"
+          curl -fsSL --max-filesize 20000000 -o "$DEST" "$URL"
+          file "$DEST"
+      - name: Commit
+        env:
+          DEST: ${{ inputs.path }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add "$DEST"
+          git commit -m "Add $DEST"
+          git push
