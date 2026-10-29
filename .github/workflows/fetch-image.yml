@@ -27,8 +27,13 @@ jobs:
             DEST="${D[$i]}"
             case "$DEST" in assets/*) ;; *) echo "path must start with assets/"; exit 1;; esac
             mkdir -p "$(dirname "$DEST")"
-            curl -fsSL --max-filesize 20000000 -o "$DEST" "${U[$i]}"
-            file "$DEST"
+            ok=
+            for t in 1 2 3 4; do
+              if curl -fsSL --max-filesize 20000000 -A "ju-sijeom-cards/1.0 (https://github.com/jocelynkim0417-cmyk/ju-sijeom-cards)" -o "$DEST" "${U[$i]}"; then ok=1; break; fi
+              sleep $((t*5))
+            done
+            if [ -n "$ok" ]; then file "$DEST"; else echo "FAILED $DEST"; rm -f "$DEST"; fi
+            sleep 1
           done
       - name: Commit
         env:
@@ -37,6 +42,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           read -ra D <<< "$DESTS"
-          git add "${D[@]}"
+          for f in "${D[@]}"; do [ -f "$f" ] && git add "$f"; done
           git commit -m "Add ${D[0]}$([ ${#D[@]} -gt 1 ] && echo " and $((${#D[@]}-1)) more")"
           for i in 1 2 3 4 5; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push && break; sleep $((i*3)); done
