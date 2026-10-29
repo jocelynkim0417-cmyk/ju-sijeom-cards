@@ -21,7 +21,14 @@ jobs:
           URLS: ${{ inputs.url }}
           DESTS: ${{ inputs.path }}
         run: |
-          read -ra U <<< "$URLS"; read -ra D <<< "$DESTS"
+          # url 이 list:<파일> 이면 그 파일의 "URL 저장경로" 줄을 읽는다
+          if [[ "$URLS" == list:* ]]; then
+            LIST="${URLS#list:}"; U=(); D=()
+            while read -r a b; do [ -n "$a" ] && U+=("$a") && D+=("$b"); done < "$LIST"
+            echo "${D[*]}" > /tmp/dests
+          else
+            read -ra U <<< "$URLS"; read -ra D <<< "$DESTS"; echo "${D[*]}" > /tmp/dests
+          fi
           [ ${#U[@]} = ${#D[@]} ] || { echo "url/path count mismatch"; exit 1; }
           for i in "${!U[@]}"; do
             DEST="${D[$i]}"
@@ -36,9 +43,8 @@ jobs:
             sleep 1
           done
       - name: Commit
-        env:
-          DESTS: ${{ inputs.path }}
         run: |
+          DESTS="$(cat /tmp/dests)"
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           read -ra D <<< "$DESTS"
