@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: 이미지 URL
+        description: 이미지 URL (여러 개면 공백으로 구분, path와 같은 순서)
         required: true
       path:
-        description: 저장 경로 (예 assets/2026-10-26/expo-cover.png)
+        description: 저장 경로 (예 assets/2026-10-26/expo-cover.png, 여러 개면 공백으로 구분)
         required: true
 permissions:
   contents: write
@@ -18,19 +18,36 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download
         env:
-          URL: ${{ inputs.url }}
-          DEST: ${{ inputs.path }}
+          URLS: ${{ inputs.url }}
+          DESTS: ${{ inputs.path }}
         run: |
-          case "$DEST" in assets/*) ;; *) echo "path must start with assets/"; exit 1;; esac
-          mkdir -p "$(dirname "$DEST")"
-          curl -fsSL --max-filesize 20000000 -o "$DEST" "$URL"
-          file "$DEST"
+          # url 이 list:<파일> 이면 그 파일의 "URL 저장경로" 줄을 읽는다
+          if [[ "$URLS" == list:* ]]; then
+            LIST="${URLS#list:}"; U=(); D=()
+            while read -r a b; do [ -n "$a" ] && U+=("$a") && D+=("$b"); done < "$LIST"
+            echo "${D[*]}" > /tmp/dests
+          else
+            read -ra U <<< "$URLS"; read -ra D <<< "$DESTS"; echo "${D[*]}" > /tmp/dests
+          fi
+          [ ${#U[@]} = ${#D[@]} ] || { echo "url/path count mismatch"; exit 1; }
+          for i in "${!U[@]}"; do
+            DEST="${D[$i]}"
+            case "$DEST" in assets/*) ;; *) echo "path must start with assets/"; exit 1;; esac
+            mkdir -p "$(dirname "$DEST")"
+            ok=
+            for t in 1 2 3 4; do
+              if curl -fsSL --max-filesize 20000000 -A "ju-sijeom-cards/1.0 (https://github.com/jocelynkim0417-cmyk/ju-sijeom-cards)" -o "$DEST" "${U[$i]}"; then ok=1; break; fi
+              sleep $((t*5))
+            done
+            if [ -n "$ok" ]; then file "$DEST"; else echo "FAILED $DEST"; rm -f "$DEST"; fi
+            sleep 1
+          done
       - name: Commit
-        env:
-          DEST: ${{ inputs.path }}
         run: |
+          DESTS="$(cat /tmp/dests)"
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add "$DEST"
-          git commit -m "Add $DEST"
+          read -ra D <<< "$DESTS"
+          for f in "${D[@]}"; do [ -f "$f" ] && git add "$f"; done
+          git commit -m "Add ${D[0]}$([ ${#D[@]} -gt 1 ] && echo " and $((${#D[@]}-1)) more")"
           for i in 1 2 3 4 5; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push && break; sleep $((i*3)); done
