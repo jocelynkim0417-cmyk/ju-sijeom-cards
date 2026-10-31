@@ -1,0 +1,14 @@
+https://api.topview.ai/s/ioLAmu7D assets/r3/audio/ssg/vo1.mp3
+https://api.topview.ai/s/O4YbxMGZ assets/r3/audio/ssg/vo2.mp3
+https://api.topview.ai/s/CPES7Vay assets/r3/audio/ssg/vo3.mp3
+https://api.topview.ai/s/oD07IAST assets/r3/audio/ssg/vo4.mp3
+https://api.topview.ai/s/HrfDi1Ld assets/r3/audio/ssg/vo5.mp3
+https://api.topview.ai/s/HHbY6UNP assets/r3/audio/ssg/vo6.mp3
+https://api.topview.ai/s/PLvxRAbW assets/r3/audio/ssg/vo7.mp3
+https://api.topview.ai/s/UsL4c4MN assets/r3/audio/energy/vo1.mp3
+https://api.topview.ai/s/DJ2G39ZH assets/r3/audio/energy/vo2.mp3
+https://api.topview.ai/s/zwyJpt2p assets/r3/audio/energy/vo3.mp3
+https://api.topview.ai/s/GEYM3lrQ assets/r3/audio/energy/vo4.mp3
+https://api.topview.ai/s/4Quoe37X assets/r3/audio/energy/vo5.mp3
+https://api.topview.ai/s/qtXdFpBG assets/r3/audio/energy/vo6.mp3
+https://api.topview.ai/s/EmWHDG0z assets/r3/audio/energy/vo7.mp3
