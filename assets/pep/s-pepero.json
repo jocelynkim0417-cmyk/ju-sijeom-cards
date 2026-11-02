@@ -1,0 +1,1 @@
+{"error":{"code":"internal_api_error_DBConnectionError","info":"[750501d8-5e84-43dd-9a3f-6aec44f23604] Caught exception of type Wikimedia\\Rdbms\\DBConnectionError","errorclass":"Wikimedia\\Rdbms\\DBConnectionError"},"servedby":"mw-api-ext.codfw.main-8965c7f58-vbx5r"}
