@@ -1,0 +1,6 @@
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=Pepero&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080 assets/pep/s-pepero.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=GS25%20store&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080 assets/pep/s-gs25.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=CU%20convenience%20store%20Korea&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080 assets/pep/s-cu.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=7-Eleven%20Korea&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080 assets/pep/s-7.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=emart24&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080 assets/pep/s-e24.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&gsrsearch=Korean%20convenience%20store%20interior&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080 assets/pep/s-int.json
