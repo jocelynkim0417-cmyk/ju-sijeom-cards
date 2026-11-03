@@ -1,0 +1,6 @@
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Bupyeong%20Kkangtong%20Market assets/onnu/s-bp.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Gukje%20Market%20Busan assets/onnu/s-gj.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Mangwon%20Market assets/onnu/s-mw.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Tongin%20Market assets/onnu/s-ti.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Korean%20traditional%20market%20vegetables assets/onnu/s-veg.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=mobile%20payment%20smartphone%20QR%20code assets/onnu/s-pay.json
