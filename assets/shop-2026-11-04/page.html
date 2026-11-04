@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+  <title>선물하기</title>
+
+  <meta property="og:title" content="카카오톡선물하기">
+  <meta property="og:image" content="https://gift-s.kakaocdn.net/dn/gift/common/kakaotalk_gift.png">
+
+  <script>
+    /*<![CDATA[*/
+    var appLoc = "kakaotalk:\/\/gift\/home?to=https%253A%252F%252Fgift.kakao.com%252Fproduct%252F12917405\u0026input_channel_id=2630";
+    /*]]>*/
+
+    function openApp() {
+      location.replace(appLoc);
+    }
+
+    window.addEventListener('load', openApp);
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+      text-align: center;
+    }
+
+    .msg_connect {
+      margin-top: 120px;
+      font-size: 18pt;
+      color: #e5310e;
+    }
+
+    .img_go {
+      margin-top: 16px;
+    }
+
+    .desc_guide {
+      margin-top: 80px;
+      font-size: 12px;
+      color: #999;
+      line-height: 18px;
+    }
+
+    .link_action {
+      display: block;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+<p class="msg_connect">연결중입니다.</p>
+<p class="img_go">
+  <img src="https://gift-s.kakaocdn.net/dn/gift/common/img_gotokakao2.png" width="160" alt="카카오톡 선물하기">
+</p>
+<p class="desc_guide">
+  카카오톡이 열리지 않으면 아래 버튼을 눌러 주세요.<br>카카오톡이 설치되어 있지 않으시거나 최신버전이 아닌 경우 연결이 되지 않습니다.
+</p>
+
+<a class="link_action" id="open" href="https://talk-apps.kakao.com/scheme/kakaotalk%3A%2F%2Fgift%2Fhome%3Fto%3Dhttps%25253A%25252F%25252Fgift.kakao.com%25252Fproduct%25252F12917405%26input_channel_id%3D2630">
+  <img src="https://gift-s.kakaocdn.net/dn/gift/legacy/public/images/share/open_kakaotalk.png"
+       alt="카카오톡 선물하기로 이동" width="200">
+</a>
+<a class="link_action" href="https://apps.apple.com/kr/app/id362057947">
+  <img src="https://gift-s.kakaocdn.net/dn/gift/legacy/public/images/share/install_kakaotalk.png"
+       alt="카카오톡 설치하기" width="200">
+</a>
+</body>
+
+</html>
