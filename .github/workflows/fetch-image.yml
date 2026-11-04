@@ -27,7 +27,7 @@ jobs:
             DEST="${D[$i]}"
             case "$DEST" in assets/*) ;; *) echo "path must start with assets/"; exit 1;; esac
             mkdir -p "$(dirname "$DEST")"
-            curl -fsSL -A "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148" -w "final=%{url_effective}\n" --max-filesize 20000000 -o "$DEST" "${U[$i]}"
+            curl -fsSL -A "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148" -w "final=%{url_effective}\n" --max-filesize 20000000 -o "$DEST" "${U[$i]}" || { echo "FAILED ${U[$i]}"; rm -f "$DEST"; continue; }
             file "$DEST"
           done
       - name: Commit
@@ -37,6 +37,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           read -ra D <<< "$DESTS"
-          git add "${D[@]}"
+          for f in "${D[@]}"; do [ -f "$f" ] && git add "$f"; done
           git commit -m "Add ${D[0]}$([ ${#D[@]} -gt 1 ] && echo " and $((${#D[@]}-1)) more")"
           for i in 1 2 3 4 5; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push && break; sleep $((i*3)); done
