@@ -1,0 +1,8 @@
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=persimmon+fruit assets/gam/s-pf.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=persimmon+tree+autumn assets/gam/s-pt.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Korean+persimmon+gam assets/gam/s-kg.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=dried+persimmon+gotgam assets/gam/s-dg.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=persimmon+sliced assets/gam/s-ps.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=persimmons+market+korea assets/gam/s-pm.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=hongsi+soft+persimmon assets/gam/s-hs.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=30&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=Diospyros+kaki+fruit assets/gam/s-dk.json
