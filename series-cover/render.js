@@ -6,7 +6,8 @@ const fd=process.env.FONTS||path.join(__dirname,'../generator/fonts');
 const font=(w,f)=>`@font-face{font-family:P;font-weight:${w};src:url(data:font/woff2;base64,${fs.readFileSync(path.join(fd,f)).toString('base64')})}`;
 const FONTS=font(500,'Pretendard-Medium.woff2')+font(700,'Pretendard-Bold.woff2')+font(800,'Pretendard-ExtraBold.woff2');
 // 브랜드 팔레트 (프로필 v2·하이라이트와 같은 색)
-const T={navy:'#0F3A4B',navyDeep:'#0A2A37',cream:'#F6F1EA',yellow:'#FFD43B',coral:'#FF4F6D',ink:'#14222A'};
+const T={navy:'#16264A',navyDeep:'#0F1B36',cream:'#FBF4F3',yellow:'#F7C6D3',coral:'#D9627F',ink:'#121C33'};
+// 2026-11-17 미주님: 초록빛 남색 → 진한 네이비 + 연핑크. (키 이름은 유지: yellow=연핑크 강조, coral=진한 핑크)
 const img=f=>{const b=fs.readFileSync(f);return 'data:image/jpeg;base64,'+b.toString('base64')};
 const R=p=>path.join(process.env.REELS||path.join(__dirname,'../reels'),p);
 
@@ -32,7 +33,7 @@ function html(c){
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:P;background:${T.navy}}
 .ph{position:absolute;inset:0;background-size:cover}
-.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,42,55,.78) 0%,rgba(10,42,55,.62) 40%,rgba(10,42,55,.15) 62%,rgba(10,42,55,.25) 80%,rgba(10,42,55,.85) 100%)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,54,.78) 0%,rgba(15,27,54,.62) 40%,rgba(15,27,54,.15) 62%,rgba(15,27,54,.25) 80%,rgba(15,27,54,.85) 100%)}
 .flat{position:absolute;inset:0;background:${c.type==='navy'?T.navy:T.cream}}
 .pill{position:absolute;right:88px;top:1100px;width:400px;height:560px;border-radius:200px;background-size:cover;${c.type==='cream'?'':'box-shadow:0 0 0 10px rgba(255,255,255,.08)'}}
 .logo{position:absolute;left:88px;top:290px;background:#fff;color:${T.navy};font-weight:800;font-size:40px;letter-spacing:-1px;padding:10px 22px;border-radius:14px;line-height:1;${dark?'':`box-shadow:inset 0 0 0 3px ${T.navy}`}}
