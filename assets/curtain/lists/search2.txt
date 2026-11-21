@@ -1,0 +1,4 @@
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=curtain+window+jpg assets/curtain/t-curtain-window-jpg.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=drapes+window+bedroom assets/curtain/t-drapes-window-bedroom.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=window+curtains+night assets/curtain/t-window-curtains-night.json
+https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1080&gsrsearch=houses+lit+windows+winter+evening assets/curtain/t-houses-lit-windows-winter-evening.json
