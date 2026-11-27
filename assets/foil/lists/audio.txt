@@ -1,0 +1,6 @@
+https://api.topview.ai/s/33Y2dVJy assets/foil/audio/vo1.mp3
+https://api.topview.ai/s/3pnTG6w4 assets/foil/audio/vo2.mp3
+https://api.topview.ai/s/quBjQ6FJ assets/foil/audio/vo3.mp3
+https://api.topview.ai/s/jBgvTiOX assets/foil/audio/vo4.mp3
+https://api.topview.ai/s/6Y9eJSOG assets/foil/audio/vo5.mp3
+https://api.topview.ai/s/8Vrw8a1T assets/foil/audio/vo6.mp3
